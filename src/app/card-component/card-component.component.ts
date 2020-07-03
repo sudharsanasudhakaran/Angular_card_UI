@@ -7,21 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class CardComponentComponent implements OnInit{
-    @Input('title') title;
-    @Input('price') price;
     @Input('var') var;
-    data:any;
+    obj:any;
         dataList = [
             {
                 name: "FREE",
                 price: 0,
                 count: "Single User",
                 size : "5GB Storage",
-                true : [
+                notcrossed : [
                     "unlimited public projects",
                     "community access"
                 ],
-                false: [
+                crossed: [
                     "Unlimited Private Projects",
                     "Dedicated Phone Support",
                     "Free Subdomain",
@@ -33,14 +31,14 @@ export class CardComponentComponent implements OnInit{
                 price: 9,
                 count: "5 Users",
                 size : "50GB Storage",
-                true:[
+                notcrossed:[
                     "Unlimited Public Projects",
                     "Community Access",
                     "Unlimited Private Projects",
                     "Dedicated Phone Support",
                     "Free Subdomain"
                 ],
-                false:[
+                crossed:[
                     "Monthly Status Reports"
             ]
             },
@@ -49,7 +47,7 @@ export class CardComponentComponent implements OnInit{
                 price: 49,
                 count: "Unlimited Users",
                 size : "150GB Storage",
-                true:[
+                notcrossed:[
                   "Unlimited Public Projects",
                   "Community Access",
                   "Community Access",
@@ -57,13 +55,13 @@ export class CardComponentComponent implements OnInit{
                   "Unlimited Free Subdomains",
                   "Monthly Status Reports"
                 ],
-                false:[]
+                crossed:[]
               }
 
         ];
         constructor() { }
         ngOnInit(): void {
-        // this.data = this.dataList[this.var];
-        // console.log(this.data);
+        this.obj = this.dataList[this.var];
+        console.log(this.obj);
     }
 }

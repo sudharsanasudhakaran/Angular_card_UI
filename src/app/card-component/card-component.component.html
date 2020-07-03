@@ -1,25 +1,26 @@
-<div class="card mb-5 mb-lg-0">
+<div class="card mb-5 mb-lg-5">
     <div class="card-body">
-      <h5 class="card-title text-muted text-uppercase text-center">{{dataList.name}}</h5>
-      <h6 class="card-price text-center">${{dataList.price}}<span class="period">/month</span></h6>           
+      <h5 class="card-title text-muted text-uppercase text-center">{{obj.name}}</h5>
+      <h6 class="card-price text-center">${{obj.price}}<span class="period">/month</span></h6>           
       <hr>
       <ul class="fa-ul">
-        <li><span class="fa-li"><i class="fas fa-check"></i></span>{{dataList[0].count}}</li>
-        <li><span class="fa-li"><i class="fas fa-check"></i></span>{{dataList[0].size}}</li>
+        <li><span class="fa-li"><i class="fas fa-times">{{obj.count}}</i></span></li>
+        <li><span class="fa-li"><i class="fas fa-times">{{obj.size}}</i></span></li>
         
-        <li  *ngFor="let vars of dataList.true">
+        <li  *ngFor="let i of obj.notcrossed">
           <span class="fa-li">
-              <i class="fas fa-check"></i></span>{{vars}}
+              <i class="fas fa-check">
+                {{i}}
+              </i></span>    
         </li>
-        <li   *ngFor="let vars of dataList.false" class="text-muted" style=" text-decoration: line-through;">
+        <li   *ngFor="let i of obj.crossed" class="text-muted">
           <span class="fa-li">
             <i class="fas fa-times">
-  
-            </i></span>>
-          {{vars}}
+                {{i}}
+            </i></span>
+
         </li>
       </ul>
-    
       <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
     </div>
   </div>
