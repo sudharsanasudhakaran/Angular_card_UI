@@ -1,0 +1,25 @@
+<div class="card mb-5 mb-lg-0">
+    <div class="card-body">
+      <h5 class="card-title text-muted text-uppercase text-center">{{dataList.name}}</h5>
+      <h6 class="card-price text-center">${{dataList.price}}<span class="period">/month</span></h6>           
+      <hr>
+      <ul class="fa-ul">
+        <li><span class="fa-li"><i class="fas fa-check"></i></span>{{dataList[0].count}}</li>
+        <li><span class="fa-li"><i class="fas fa-check"></i></span>{{dataList[0].size}}</li>
+        
+        <li  *ngFor="let vars of dataList.true">
+          <span class="fa-li">
+              <i class="fas fa-check"></i></span>{{vars}}
+        </li>
+        <li   *ngFor="let vars of dataList.false" class="text-muted" style=" text-decoration: line-through;">
+          <span class="fa-li">
+            <i class="fas fa-times">
+  
+            </i></span>>
+          {{vars}}
+        </li>
+      </ul>
+    
+      <a href="#" class="btn btn-block btn-primary text-uppercase">Button</a>
+    </div>
+  </div>
